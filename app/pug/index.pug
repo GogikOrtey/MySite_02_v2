@@ -1,0 +1,68 @@
+extends template
+
+block name-page
+  title Игра 
+
+block nav-bar
+  +createMenu('Игра')
+
+block content
+    p   
+    .wh100
+      img(src='img/Black-Box-Image.png')
+    .main-spase
+      .yellow-button
+        a(href='Page_02.html')  Как играть?
+    .game-main-spase
+      .game-form
+        p.grid-p  Выбор уровня сложности:
+        .select-lvl-hard
+          button.b1  1 
+          button#button-selected.b2  2 
+          button.b3  3 
+          button.b4  4 
+          button.b5  5 
+        .main-game-form
+          .left-pan.pan
+            p  Значения переменных:
+            .val-var
+              p  a = 15 
+              p  b = 4 
+              p  c = 12 
+              p#F  F = 15 
+          .right-pan.pan
+            // rp = right-pan, pan = pannel
+            p.rp1 Ответ:
+            .rp2
+              .rp2-F
+                | F =
+              .rp2-1
+                .rp2-1-abc
+                  | a/b*c
+              .rp-3-control-button
+                // cb = control-button
+                .rp-3-cb-left-space
+                  p.rp-3-cb-left-space
+                    button +
+                    button -
+                    button *
+                  p.rp-3-cb-left-space
+                    button /
+                    button.blocked-element (
+                    button.blocked-element )
+                .rp-3-cb-right-space
+                  p.rp-3-cb-left-space
+                    button.my-1 a
+                    button.my-1 b
+                    button.my-1 c
+                  p.rp-3-cb-left-space
+                    button#d.blocked-element2 d
+                    button.blocked-element2 e
+                    button.blocked-element2 f
+              .rp-4-down-button
+                // db = down-button
+                button.rp-4-db-left  Другие значения
+                button.rp-4-db-right  Проверить
+        .end-no_button
+          .b
+            p Поздравляю! Всё верно

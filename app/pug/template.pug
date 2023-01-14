@@ -1,0 +1,54 @@
+mixin createMenu(active)
+  each name in ['Игра','Правила','Результаты']
+    if active==name
+      .pp1
+        .active-page
+          +cr(name)
+    else
+      .pp1
+        +cr(name)
+
+mixin cr(name)
+  if name=='Игра'
+    a(href='index.html')
+      p=name
+  else if name=='Правила'
+    a.center(href='Page_02.html')
+      p=name
+  else if name=='Результаты'
+    a(href='Page_03.html')
+      p=name
+  else
+    a(href='#')
+      p=name
+
+// ---
+
+html.bg-img
+  head
+  include headCode
+
+  block name-page
+
+  body.main-bg
+    .main-head
+      .head-black
+        .lang-button
+          p.head-lang
+            a(href='#')  Ru 
+        .avatar
+          .tab1
+            p
+              a(href='https://vk.com/gog.ortey') by Gogik Ortey
+          .img-avatar
+            img(src='img/MyAvatar.jpg')
+      .head-yellow
+        p  Генератор выражений или
+        p  Чёрный ящик наоборот
+    .u2
+    .nav-pages
+      block nav-bar
+    block content
+
+    .footer
+      p  Made in 2022 

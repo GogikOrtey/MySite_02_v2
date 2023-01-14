@@ -1,0 +1,509 @@
+// К сожалению, расширенные коммантарии не поддерживаются языком Stylus. 
+// По этому их здесь нет.
+
+bg-black = #4d4d4d
+bg-yel = #ffd600
+bg-blue = #00a3ff
+
+main-bg = #f4f4f4
+
+my-gray = #929292
+my-gray-2 = #c1c1c1
+my-gray-3 = #E9E9E9
+my-orange = #ff9900
+
+bord() // Для отладки
+	border solid black 1px
+
+body
+	background-image url("img/Background-Fone-Gray-Small.jpg")
+	background-size repeat
+	padding 0
+	margin 0
+	@media (min-width: 1000px)
+		width 1000px
+		margin auto
+
+@font-face // Не работает
+	font-family "Blogger Sans"
+	src: url('fonts/BS.otf')
+
+html
+	font-family "Blogger Sans" , "Arial"
+
+.u2
+	display: block
+	width: 100%
+	height: 10px
+	background-color my-gray
+
+.nav-pages
+	width: 100%
+	display grid
+	grid-template-columns 1fr 1fr 1fr
+	grid-template-rows 50px
+	background-color my-gray
+	@media (min-width: 1000px)
+		border-radius 0px 0px 10px 10px
+	@media (min-height: 1500px)
+		border-radius 0px 0px 10px 10px
+	& a
+		grid-row: 1
+		margin auto
+		text-align center
+		vertical-align top
+		text-decoration none
+		color black
+		font-size 1.25em
+		height 100%
+		width 95%
+		border-radius 10px 10px 0px 0px
+		margin-bottom 0px
+		background-color my-gray-2
+		display: table
+		&.center
+			width 99%
+		&:hover
+			background-color bg-yel
+		p
+			display: table-cell
+			text-align: center
+			vertical-align: middle
+	& .active-page 
+		a
+			background-color: main-bg
+			vertical-align top
+	
+.u1
+	margin: 60px 0px
+
+.head-black, .footer
+	background-color: bg-black
+	@media (min-width: 1000px)
+		border-radius 10px 10px 0px 0px
+
+#page-3
+	&.footer
+		@media (min-height: 715px)
+			border-radius 10px
+
+.footer
+	display grid
+	height 100px
+	@media (min-height: 1500px)
+		border-radius 10px
+	& > p
+		display block
+		color white
+		padding 5px
+		padding 10px
+		margin auto auto 0 0
+		font-size 1.1em
+
+
+.head-black
+	@media (min-height: 1500px)
+		border-radius 10px 10px 0px 0px
+	& > .head-lang
+		color: black // Это тоже не работает
+		grid-column 1/2
+		grid-row 1/2
+	& > .head-me
+		grid-column 2/3
+		grid-row 1/2
+		text-align right
+
+.main-head
+	display grid
+	grid-template-rows 1fr 2fr
+	height 180px
+	grid-template-columns 1fr 1fr
+	font-size 1.1em
+	& > .head-black
+		display grid
+		color white
+		padding 3px 7px
+		grid-column 1/3
+		grid-row 1/2
+		grid-template-rows 1fr
+		grid-template-columns 50px auto 180px
+	& > .head-yellow
+		background-color: bg-yel
+		display grid
+		grid-column 1/3
+		grid-row 2/3
+
+.lang-button
+	grid-column 1/2
+	border solid 0px black
+	border-radius 8px
+	margin auto
+	padding 5px
+	width 35px
+	height 35px
+	line-height 0px
+	display table
+	background-color main-bg
+	color black
+	& > p
+		text-align center
+		vertical-align middle
+		display table-cell
+	a
+		text-decoration none
+	&:hover
+		background-color bg-yel
+		border white solid 0px
+
+.avatar
+	display grid
+	grid-column 3/4
+	border solid 0px black
+	background-color main-bg
+	grid-template-rows 1fr
+	grid-template-columns 60px auto
+	margin 3px 0px
+	border-radius 12px
+	height 50px
+	&:hover
+		background-color bg-blue
+	& > .tab1
+		grid-row 1/2
+		grid-column 2/3
+		display table
+		border solid 0px black
+	& > .img-avatar
+		grid-row 1/2
+		grid-column 1/2
+		padding 3px
+
+.tab1
+	& > p
+		color black
+		vertical-align auto
+		line-height 48px
+		display table-cell
+		text-align center
+	a
+		color black
+
+.img-avatar
+	& > img
+		height 45px
+		border-radius 100%
+
+.head-yellow
+	& > p
+		display grid
+		width 100%
+		margin auto
+		text-align center
+		font-size 1.9em
+
+.main-spase
+	display block
+	width 100%
+	margin auto
+	& > .main-element
+		border-radius 15px
+		background-color white
+		width 70%
+		height auto
+		margin 15px auto
+		padding 10px
+		text-align center
+	& > .yellow-button
+		border-radius 10px
+		border 2px solid black
+		background-color bg-yel
+		width 70%
+		height: 70px
+		margin 5px auto
+		padding 7px 10px
+		text-align center
+		vertical-align middle
+		font-size 2em
+		@media(max-width:1000px)
+			width 700px
+
+.main-element
+	& > p
+		font-size 1.5em
+	.add-element
+		display block
+		border-radius 10px
+		font-size 1em
+		background-color my-gray-3
+		width auto
+		height auto
+		margin 0px auto
+		padding 25px
+		height 300px
+		text-align left
+
+table
+	border 1px solid black
+	margin 20px
+	padding 0px
+	td
+		border 1px solid black
+
+.wh100
+	border-radius 15px
+	background-color white
+	margin 15px auto
+	padding 10px
+	text-align center
+	width 70%
+	display grid
+	height 300px
+	& > img
+		width 400px
+		margin auto
+	@media(max-width:1000px)
+		width 700px
+
+.yellow-button
+	& > a
+		display block
+		text-decoration none
+		color black
+		text-align center
+		width 100%
+		height 100%
+	&:hover
+		background-color lightgray
+		border 2px dotted black
+
+.game-main-spase
+	display block
+	border-radius 15px
+	background-color white
+	width 70%
+	height auto
+	margin 15px auto
+	padding 10px
+	text-align center
+	@media(max-width:1000px)
+		width 700px
+
+.game-form
+	display grid
+	grid-template-columns 1fr
+	grid-template-rows 50px 50px 40px 277px auto
+	& > .grid-p
+		margin 10px auto
+		grid-row 1/2
+		text-align center
+		font-size larger
+
+.select-lvl-hard
+	display grid
+	grid-row 2/3
+	width 440px
+	margin auto
+	height 65px
+	text-align justify
+	grid-template-columns repeat(5, 1fr)
+	grid-template-rows 1fr
+	grid-column-gap 20px
+	& > button
+		border 0px solid black
+		text-align center
+		font-size 1.7em
+		border-radius 15%
+		&:hover
+			background-color my-gray-2
+		&:active
+			border 2px solid black
+	& > #button-selected
+		background-color bg-blue
+		border 2px solid black
+	& > .b1
+		grid-column 1/2
+
+.main-game-form
+	grid-row 3/4
+	display grid
+	grid-template-columns 1fr 3fr
+	grid-template-rows 1fr
+	width 95%
+	height 335px
+	margin auto
+	padding 25px 0px
+	& > .pan
+		display block
+		border-radius 15px
+		background-color my-gray-3
+		width 90%
+		height auto
+		padding 2px
+		text-align center
+
+.left-pan
+	grid-column 1/2
+	margin 15px auto 15px 20px
+
+.right-pan
+	grid-column 2/3
+	margin 15px 20px 15px auto
+	display grid
+	grid-template-columns 1fr
+	grid-template-rows 1fr 1fr 1fr 1fr
+	font-size larger
+	font-style italic
+
+.val-var
+	line-height 8px
+	font-size larger
+	text-align left
+	margin-left 32%
+
+#F
+	line-height 40px
+
+.rp1
+	grid-row 1
+
+.rp2
+	display grid
+	border-radius 7px
+	background-color white
+	width 88%
+	height 28px
+	margin 15px auto
+	text-align center
+	grid-template-columns 13% auto
+	& > .rp2-1
+		display block
+		border 1px solid black
+		border-radius 7px
+		width 100%
+		height 98%
+		text-align right
+		margin auto 0px 0px 0px 
+	.rp2-F
+		grid-column 1/2
+		text-align center
+		line-height 25px
+
+.rp2-1-abc
+	text-align left
+	letter-spacing 3px
+	line-height 25px
+	padding-left 8px
+
+.rp-3-control-button
+	grid-row 3/4
+	grid-column 1/3
+	display grid
+	width 97.5%
+	margin 10px auto
+	margin-bottom 0px
+	height 100px
+	text-align center
+	grid-template-columns 50% 50%
+	grid-template-rows 1fr
+	grid-column-gap 10px
+	line-height 5px
+	padding 5px
+	p
+		margin 5px 0px
+
+.rp-3-cb-right-space
+	min-width 170px
+	grid-column 2/3
+	grid-row 1/2
+	& > p
+		text-align: start
+
+.rp-3-cb-left-space
+	min-width 170px
+	& > .my-1
+		margin: 0px 3px
+	& > p
+		text-align: start
+		padding: 0px 17px
+
+.rp-3-cb-left-space
+	grid-column 1/2
+	grid-row 1/2
+	& > button
+		display inline
+		border 0px solid black
+		text-align center
+		font-size larger
+		border-radius 10%
+		background-color white
+		line-height 5px
+		width 40px
+		height 40px
+		&:hover
+			background-color my-gray-2
+			border 0px solid black
+		&:active
+			background-color bg-blue
+		&.blocked-element
+			background-color my-gray-2
+			border 0px solid black
+		&.blocked-element2
+			background-color my-gray-2
+			border 0px solid black
+			margin-right 5px
+
+#slash
+	margin-right 0px
+
+#d
+	margin-left 5px
+
+.rp-4-down-button
+	grid-column 1/3
+	grid-row 4/6
+	border 0px solid black
+	display grid
+	grid-template-columns 1fr 1fr
+	grid-template-rows 1fr
+	margin 15px
+	padding 0px
+	margin-left 3px
+	& > button
+		height 40px
+		width auto
+		padding 5px
+		margin 5px
+		margin-top 0px
+		font-size medium
+		border-radius 7px
+		&:hover
+			border-style dashed
+		&:active
+			background-color my-gray-2
+
+.rp-4-db-left
+	grid-column 1/2
+	background-color my-orange
+	border 2px solid black
+
+.rp-4-db-right
+	grid-column 2/3
+	background-color bg-blue
+	border 2px solid black
+
+.end-no_button
+	grid-row 5/6
+	width 100%
+	& > .b
+		display: table
+		width 90%
+		height 55px
+		border-radius 10px
+		border 0px solid black
+		background-color bg-yel
+		margin 0px auto
+		margin-bottom 10px
+		font-size larger
+		& > p
+			display: table-cell
+			text-align: center
+			vertical-align: middle

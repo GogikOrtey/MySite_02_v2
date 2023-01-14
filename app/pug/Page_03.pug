@@ -1,0 +1,27 @@
+extends template
+
+block name-page
+  title Результаты
+
+block nav-bar
+  +createMenu('Результаты')
+
+block content
+  p   
+    .main-spase
+      .main-element
+        p  Таблица результатов:
+        table(height='150', width='295', cellspacing='0', cellpadding='10')
+          tbody
+            tr(height='50')
+              td  Сколько раз выиграл в игру
+              td  2 
+            tr
+              td  Максимальное кол-во неверных ответов, до верного
+              td  43 
+            tr
+              td  Время, проведённое на сайте
+              td  21 мин
+            tr
+              td  Всего кол-во сыгранных партий
+              td  7 
